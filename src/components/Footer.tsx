@@ -143,7 +143,7 @@ const Footer = () => {
               © 2024 Market Lift. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">
-              Serving independent grocery stores nationwide This is connected
+              Serving independent grocery stores nationwide
             </p>
           </div>
         </div>
