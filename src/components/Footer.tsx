@@ -100,7 +100,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/privacy-policy"
+                  href="/privacy-policy.html" // Update this line
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
@@ -108,7 +108,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/terms-of-service"
+                  href="/terms-and-conditions.html" // Update this line
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms of Service
