@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-// Adjust these import paths if your files are in a different folder:
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import NotFound from "./pages/NotFound";
+// Your tree shows these files at the src root:
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsOfService from "./TermsOfService";
+import NotFound from "./NotFound";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
