@@ -3,35 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MarketLift — Terms of Service</title>
+  <title>Market Lift — Terms of Service</title>
 
   <!-- Tailwind CSS + Typography plugin via CDN -->
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
     tailwind.config = {
       theme: {
-        extend: {}
+        extend: {
+          colors: {
+            'brand-green': '#22c55e' /* adjust if your brand uses a different green */
+          }
+        }
       }
     }
   </script>
+
+  <!-- Calendly (for popup widget) -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col bg-white text-gray-800">
 
-  <!-- Header (replacement for <Header />) -->
-  <header class="border-b bg-white/80 backdrop-blur">
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-semibold">MarketLift</a>
-      <nav class="hidden sm:flex gap-6 text-sm">
-        <a href="/" class="hover:underline">Home</a>
-        <a href="/features" class="hover:underline">Features</a>
-        <a href="/pricing" class="hover:underline">Pricing</a>
-        <a href="/contact" class="hover:underline">Contact</a>
-      </nav>
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo + Text -->
+        <a href="/" class="flex items-center">
+          <img
+            src="/lovable-uploads/e2385655-1ddf-45c6-a23e-be0eaafa27fb.svg"
+            alt="Market Lift Logo"
+            class="w-12 h-12 mr-3"
+          />
+          <span class="text-xl font-bold text-gray-900">Market Lift</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/#features" class="text-gray-600 hover:text-brand-green transition-colors">Features</a>
+          <a href="/#how-it-works" class="text-gray-600 hover:text-brand-green transition-colors">How It Works</a>
+          <a href="/#pricing" class="text-gray-600 hover:text-brand-green transition-colors">Why Us</a>
+          <a href="/#testimonials" class="text-gray-600 hover:text-brand-green transition-colors">Reviews</a>
+          <a href="/#faq" class="text-gray-600 hover:text-brand-green transition-colors">FAQ</a>
+          <button id="book-demo-desktop" class="px-4 py-2 rounded-md bg-brand-green text-white font-medium shadow hover:opacity-90 transition">
+            Book a Demo
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="menu-toggle" class="md:hidden p-2" aria-label="Toggle menu">
+          <!-- Menu icon -->
+          <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <!-- X icon -->
+          <svg id="icon-x" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-nav" class="md:hidden py-4 border-t border-gray-200 hidden">
+        <nav class="flex flex-col space-y-4">
+          <a href="/#features" class="text-gray-600 hover:text-brand-green transition-colors text-left">Features</a>
+          <a href="/#how-it-works" class="text-gray-600 hover:text-brand-green transition-colors text-left">How It Works</a>
+          <a href="/#pricing" class="text-gray-600 hover:text-brand-green transition-colors text-left">Why Us</a>
+          <a href="/#testimonials" class="text-gray-600 hover:text-brand-green transition-colors text-left">Reviews</a>
+          <a href="/#faq" class="text-gray-600 hover:text-brand-green transition-colors text-left">FAQ</a>
+          <button id="book-demo-mobile" class="px-4 py-2 rounded-md bg-brand-green text-white font-medium shadow hover:opacity-90 transition w-full">
+            Book a Demo
+          </button>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- Main -->
-  <main class="flex-grow container mx-auto px-4 py-16">
+  <main class="flex-grow container mx-auto px-4 pt-24 pb-16"> <!-- pt-24 offsets fixed header -->
     <h1 class="text-4xl font-bold mb-8 text-center">Terms of Service</h1>
 
     <article class="prose prose-lg max-w-none mx-auto text-gray-800">
@@ -92,7 +146,7 @@
       <!-- 8. Data and Privacy -->
       <h2>8 · Data &amp; Privacy</h2>
       <p>
-        Use of personal information is governed by the <a href="/privacy-policy">MarketLift Privacy Policy</a>. You represent that you have all rights and consents required to provide customer data to MarketLift.
+        Use of personal information is governed by the <a href="/privacy-policy">Market Lift Privacy Policy</a>. You represent that you have all rights and consents required to provide customer data to MarketLift.
       </p>
 
       <!-- 9. Support and Maintenance -->
@@ -146,22 +200,130 @@
         Address: [Company Address]
       </address>
 
-      <p class="text-center text-sm mt-12">© 2025 MarketLift, LLC. All rights reserved.</p>
+      <p class="text-center text-sm mt-12">© 2025 Market Lift, LLC. All rights reserved.</p>
       <p class="text-center text-xs text-gray-500 mt-4">Last updated: June 8, 2025</p>
     </article>
   </main>
 
-  <!-- Footer (replacement for <Footer />) -->
-  <footer class="border-t">
-    <div class="container mx-auto px-4 py-8 text-sm text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <div>© 2025 MarketLift, LLC</div>
-      <div class="flex gap-4">
-        <a class="hover:underline" href="/terms">Terms</a>
-        <a class="hover:underline" href="/privacy">Privacy</a>
-        <a class="hover:underline" href="/contact">Contact</a>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+        <!-- Company Info -->
+        <div>
+          <div class="flex items-center mb-6">
+            <img
+              src="/lovable-uploads/e2385655-1ddf-45c6-a23e-be0eaafa27fb.svg"
+              alt="Market Lift Logo"
+              class="w-12 h-12 mr-3"
+            />
+            <span class="text-xl font-bold">Market Lift</span>
+          </div>
+          <p class="text-gray-400 mb-6 leading-relaxed">
+            Empowering independent grocery stores nationwide with modern
+            mobile ordering technology.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+              <span class="text-sm font-bold">f</span>
+            </div>
+            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+              <span class="text-sm font-bold">t</span>
+            </div>
+            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+              <span class="text-sm font-bold">in</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="/#features" class="text-gray-400 hover:text-white transition-colors">Features</a></li>
+            <li><a href="/#how-it-works" class="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+            <li><a href="/#pricing" class="text-gray-400 hover:text-white transition-colors">Why Us</a></li>
+            <li><a href="/#testimonials" class="text-gray-400 hover:text-white transition-colors">Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Support</h3>
+          <ul class="space-y-3">
+            <li><a href="/#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Help Center</a></li>
+            <li><a href="/privacy-policy" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms-of-service" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <!-- MapPin -->
+              <svg class="w-5 h-5 text-brand-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5s-3 1.343-3 3 1.343 3 3 3z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 10.5c0 7.142-7.5 10.5-7.5 10.5S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+              <span class="text-gray-400">Nationwide Service</span>
+            </div>
+            <div class="flex items-center">
+              <!-- Phone -->
+              <svg class="w-5 h-5 text-brand-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h1.28a2 2 0 011.94 1.515l.57 2.28a2 2 0 01-.45 1.846l-1.2 1.2a16 16 0 006.364 6.364l1.2-1.2a2 2 0 011.846-.45l2.28.57A2 2 0 0121 17.72V19a2 2 0 01-2 2h-1C9.82 21 3 14.18 3 6V5z"/></svg>
+              <span class="text-gray-400">(504) 315-6707</span>
+            </div>
+            <div class="flex items-center">
+              <!-- Mail -->
+              <svg class="w-5 h-5 text-brand-green mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <span class="text-gray-400">Marketlift@outlook.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">
+            © 2024 Market Lift. All rights reserved.
+          </p>
+          <p class="text-gray-400 text-sm">
+            Serving independent grocery stores nationwide
+          </p>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Minimal JS to match Header behavior -->
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileNav  = document.getElementById('mobile-nav');
+    const iconMenu   = document.getElementById('icon-menu');
+    const iconX      = document.getElementById('icon-x');
+
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = !mobileNav.classList.contains('hidden');
+      if (isOpen) {
+        mobileNav.classList.add('hidden');
+        iconMenu.classList.remove('hidden');
+        iconX.classList.add('hidden');
+      } else {
+        mobileNav.classList.remove('hidden');
+        iconMenu.classList.add('hidden');
+        iconX.classList.remove('hidden');
+      }
+    });
+
+    function openCalendly() {
+      if (window.Calendly) {
+        window.Calendly.initPopupWidget({ url: 'https://calendly.com/hamzaworks178/30min' });
+      } else {
+        window.open('https://calendly.com/hamzaworks178/30min', '_blank');
+      }
+    }
+
+    document.getElementById('book-demo-desktop')?.addEventListener('click', openCalendly);
+    document.getElementById('book-demo-mobile')?.addEventListener('click', openCalendly);
+  </script>
 </body>
 </html>
