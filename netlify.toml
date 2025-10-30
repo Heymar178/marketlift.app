@@ -1,4 +1,8 @@
-# netlify.toml (project root)
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Clean URLs → actual HTML files
 [[redirects]]
   from = "/privacy-policy"
   to = "/privacy-policy.html"
@@ -19,18 +23,7 @@
   to = "/terms-and-conditions.html"
   status = 200
 
-# Optional variants
-[[redirects]]
-  from = "/terms-and-conditions"
-  to = "/terms-and-conditions.html"
-  status = 200
-
-[[redirects]]
-  from = "/terms-and-conditions/"
-  to = "/terms-and-conditions.html"
-  status = 200
-
-# SPA fallback (keep LAST)
+# SPA fallback LAST (for your React app’s routes)
 [[redirects]]
   from = "/*"
   to = "/index.html"
